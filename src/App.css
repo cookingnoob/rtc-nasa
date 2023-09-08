@@ -50,10 +50,10 @@
   z-index: 1;
   text-align: center;
   margin-top: 10%;
-  animation-name: desvanecer;
+  /* animation-name: desvanecer;
   animation-duration: 2s; 
   animation-delay: 2s;
-  animation-fill-mode: forwards;
+  animation-fill-mode: forwards; */
 }
 .video{
 
@@ -150,6 +150,11 @@ footer{
   .title{
     font-size: 20vw;
     margin: 4px;
+  }
+  .title-curiosity{
+    font-size: 23vw;
+
+    margin-left: 10%;
   }
   .date-copyright{
     top: 40px;
