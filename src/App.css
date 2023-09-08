@@ -1,42 +1,183 @@
+@font-face {
+  font-family: Futura;
+  src: url(./assets/Futura/futur.ttf);
+  font-family: Eb-garamond;
+  src: url(./assets/EB_Garamond/static/EBGaramond-Medium.ttf);
+}
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  margin: 0 ;
+  padding: 0;
+  box-sizing: border-box;
+}
+.media{
+ height: 100vh;
+}
+.title{
+  font-family: Futura;
+  font-size: 8vw;
+  font-style: normal;
+  font-weight: 500;
   text-align: center;
+  color: aliceblue;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-top: 10%;
+  opacity: 1;
+  animation-name: desvanecer;
+  animation-duration: 2s; 
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
 }
+.title-explanation{
+  font-family: Futura;
+  font-size: 5vw;
+  font-style: normal;
+  font-weight: 500;
+  text-align: center;
+  text-align: center;
+  margin-top: -60px;
+  margin-bottom: 100px;
+}
+.title-curiosity{
+  font-family: Futura;
+  font-size: 130px;
+  font-style: normal;
+  font-weight: 500;
+  text-align: center;
+  color: black;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-top: 10%;
+  animation-name: desvanecer;
+  animation-duration: 2s; 
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+}
+.video{
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.image,
+.video{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.date-copyright{
+  position: relative;
+  color: aliceblue;
+  z-index: 1;
+  margin-left: 45%;
+  margin-top: -50px;
+  font-family: Futura;
+  font-size: 20px;
+  animation-name: desvanecer;
+  animation-duration: 2s; 
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
 }
-
-@keyframes logo-spin {
+.date-copyright-curiosity{
+  position: relative;
+  color: black;
+  z-index: 1;
+  margin-left: 40%;
+  margin-top: -50px;
+  font-family: Futura;
+  font-size: 20px;
+  animation-name: desvanecer;
+  animation-duration: 2s; 
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+}
+.calendar{
+  position: relative;
+  z-index: 1;
+  margin-left: 45vw;
+  border-radius: 10px;
+  border: none;
+  width: 150px;
+  padding: auto;
+  font-family:Futura;
+  top: -850px;
+  right: 100px;
+}
+.calendar::before{
+  content: "Change APOD";
+}
+.calendar-label{
+  display: none;
+}
+.select-container{
+  font-family: Eb-garamond;
+  position: relative;
+  color: aliceblue;
+  z-index: 1;
+  margin-left: 45vw;
+  top: -875px;
+  right: -100px;
+  width: 150px;
+}
+.explanation-container{
+  height: 100vh;
+}
+.explanation{
+  font-family:Eb-garamond ;
+ font-size: 40px;
+ font-style: normal;
+ font-weight: 500;
+ line-height: normal;
+ margin-left: 2%;
+ margin-right: 2%;
+ margin-top: -5%;
+}
+footer{
+  font-family:Futura ;
+  font-size: 40px;
+  text-align: center;
+  margin-top: -100px;
+}
+@keyframes desvanecer {
   from {
-    transform: rotate(0deg);
+    opacity: 1;
   }
   to {
-    transform: rotate(360deg);
+    opacity: 0;
   }
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@media screen and (max-width: 767px){
+  .title{
+    font-size: 20vw;
+    margin: 4px;
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  .date-copyright{
+    top: 40px;
+    right: 60px;
+  }
+  .image{
+    width: 100vw;
+  }
+  .explanation-container{
+    display: none;
+  }
+  .select-container{
+    top: -10px;
+    left: 10px;
+    text-align: center;
+  }
+  .calendar{
+    top: 20px;
+    left: -200px;
+    border: 1px solid black;
+    height: 50px;
+    width: 200px;
+    text-align: center;
+  }
+  .calendar::before{
+    content: "Change APOD";
+  }
+  footer{
+    margin-top: 1px;
+  }
 }

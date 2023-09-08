@@ -1,35 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState, useEffect } from 'react'
 import './App.css'
+import GetContent from './components/GetContent'
+import Calendar from './components/Calendar';
+import SelectPage from './components/SelectPage';
+import { APOD_URL, ROVER_CALENDAR } from './api/api-key'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [url, setUrl] = useState(APOD_URL);
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <GetContent url={url} />
+      {url.includes('apod') ? <Calendar setUrl={setUrl} url={url} /> : null}
+      <SelectPage setUrl={setUrl} url={url} />
+      <footer>Alan Coste</footer>
     </>
   )
 }
 
 export default App
+
+//Crear un estado para la liga de la API_URL 
+//crear select para escoger si Apod o rover
+//useEffect que escuche el input del select para actualizar el valor de API_URL
+
+//Componente que haga el render del contenido de la api
+
